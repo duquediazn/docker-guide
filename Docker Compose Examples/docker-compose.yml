@@ -1,0 +1,53 @@
+services:
+  db:
+    image: postgres:17
+    container_name: tabulae-db
+    restart: unless-stopped # Reinicia el contenedor salvo que lo detengas manualmente
+    env_file: .env
+    environment:
+      POSTGRES_USER: ${TABULAE_DB_USER}
+      POSTGRES_PASSWORD: ${TABULAE_DB_PASSWORD}
+      POSTGRES_DB: ${TABULAE_DB_NAME}
+    volumes:
+      - pgdata:/var/lib/postgresql/data # Volumen persistente para guardar datos
+      - ./db_init:/docker-entrypoint-initdb.d # Monta db_init/ en una ruta especial dentro del contenedor:
+      # PostgreSQL ejecutará automáticamente todos los .sql que encuentre en esa carpeta solo la primera vez que se inicializa el volumen.
+    ports:
+      - "5432:5432"
+    networks:
+      - tabulae-network # Red compartida para comunicar con backend y frontend usando el nombre db como host
+
+  backend:
+    build:
+      context: ./backend # Usa el Dockerfile que se encuentra en la carpeta ./backend para construir la imagen
+    container_name: tabulae-backend
+    restart: unless-stopped
+    env_file: .env
+    depends_on:
+      - db # Se asegura de que el contenedor 'db' se inicie antes que el backend
+    ports:
+      - "8000:8000"
+    networks:
+      - tabulae-network
+
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        VITE_API_URL: http://localhost/api
+    container_name: tabulae-frontend
+    restart: unless-stopped
+    depends_on:
+      - backend # Asegura que el backend esté disponible antes de levantar el frontend
+    ports:
+      - "8080:80"
+    networks:
+      - tabulae-network
+
+volumes:
+  pgdata:
+
+
+networks:
+  tabulae-network:
+    driver: bridge # Red privada por defecto para contenedores en el mismo host.
