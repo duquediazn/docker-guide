@@ -108,6 +108,17 @@ Attach to a running container:
 docker container exec -it [containerName] -- bash
 ```
 
+Or the more common short form:
+
+```bash
+docker exec -it [containerName] bash
+```
+
+f the container doesn't have bash (common in Alpine-based images), try: 
+```bash
+docker exec -it [containerName] sh
+```
+
 ---
 
 ## Cleaning up
