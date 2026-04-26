@@ -1,4 +1,4 @@
-# Docker & Kubernetes
+# Docker 
 
 Esta guía recopila explicaciones, ejemplos y *cheat sheets* para aprender y trabajar con Docker y Kubernetes de forma práctica. Está organizada por temas (desde conceptos básicos, comandos y archivos de configuración, hasta ejemplos reales) y enlaza a recursos externos y cursos gratuitos para profundizar.  
 
@@ -8,11 +8,10 @@ Esta guía recopila explicaciones, ejemplos y *cheat sheets* para aprender y tra
 
 > Los [cursos de Youtube](README.md#cursos-online-gratis-youtube-freecodecamp-channel) enlazados en esta guía también incluyen pasos de instalación y configuración.
 
-## Resumen de conceptos principales de Docker y Kubernetes
+## Resumen de conceptos principales de Docker
 
 Una vez lo tengas todo instalado, ¡empieza por aquí!: 
   - [Docker_concepts.md](./Docker_concepts.md)
-  - [Kubernetes_concepts.md](./Kubernetes_concepts.md) (¡Pendiente!)
 
 ## Cheat Sheets de los principales comandos de Docker
 
@@ -29,7 +28,7 @@ Una vez lo tengas todo instalado, ¡empieza por aquí!:
 - [Dockerfile (Backend: FastApi)](https://github.com/duquediazn/docker-and-kubernetes/blob/main/Dockerfile%20Examples/FastApi/Dockerfile)
 - [Docker-compose (React+FastAPI+PostgreSQL)](https://github.com/duquediazn/docker-and-kubernetes/blob/main/Docker%20Compose%20Examples/docker-compose.yml)
 
-## Recursos para aprender sobre Docker y Kubernetes.
+## Recursos para aprender sobre Docker
 
 Aquí se listan todos los recursos empleados para realizar esta guía/tutorial sobre Docker.
 
@@ -50,6 +49,5 @@ Aquí se listan todos los recursos empleados para realizar esta guía/tutorial s
 ### Documentación oficial
 
 - [Docker docs](https://docs.docker.com/)
-- [Kubernetes docs](https://kubernetes.io/es/docs/concepts/overview/)
 
 
