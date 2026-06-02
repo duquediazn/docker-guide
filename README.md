@@ -1,6 +1,6 @@
 # Docker 
 
-Esta guía recopila explicaciones, ejemplos y *cheat sheets* para aprender y trabajar con Docker y Kubernetes de forma práctica. Está organizada por temas (desde conceptos básicos, comandos y archivos de configuración, hasta ejemplos reales) y enlaza a recursos externos y cursos gratuitos para profundizar.  
+Esta guía recopila explicaciones, ejemplos y *cheat sheets* para aprender y trabajar con Docker de forma práctica. Está organizada por temas (desde conceptos básicos, comandos y archivos de configuración, hasta ejemplos reales) y enlaza a recursos externos y cursos gratuitos para profundizar.  
 
 **Instalación - Docker:** 
 - Guía oficial de instalación de Docker: [Get Docker](https://docs.docker.com/get-docker/)  
